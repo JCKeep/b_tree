@@ -1,0 +1,7 @@
+btreedef.h : B树相关宏定义头文件
+LIST.h : 双向链表，用于对内存空白区进行管理
+BTree.h : B树的节点定义，以及B树API的声明
+BTree.c : B树的主要实现(删除等操作本人还在写)
+main.c : 我用来测试的程序
+makefile ： 就是Linux的makefile
+B树的定义.txt : B树的定义

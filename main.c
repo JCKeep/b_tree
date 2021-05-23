@@ -19,9 +19,8 @@ int main(void)
 	B_TREE_CREATE(&a, "file");
 	B_TREE_LOAD(&b, "file");
 
-	int k, seed;
-	scanf("%d %d", &k, &seed);
-	RandomInitialize(seed);
+	int k;
+	scanf("%d", &k);
 	int i;
 	for (i = 1; i <= k; ++i) {
 		B_TREE_INSERT(&b, RandomInt());
@@ -32,7 +31,7 @@ int main(void)
 	printf("Level:%d\tSize:%ld\n", b.level, b.size);
 	int tmp;
 	scanf("%d", &tmp);
-	RandomInitialize(seed);
+	RandomInitialize(1);
 	for (i = 0; i < tmp; ++i) {
 		int t = RandomInt();
 		BOOL flag = B_TREE_SEARCH(&b, b.root, t);

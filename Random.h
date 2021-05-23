@@ -39,7 +39,7 @@ void RandomInitialize(unsigned long InitVal)
 
 int RandomInt(void)
 {	
-	int random = 10000;
+	int random = INT_MAX;
 	return (int)(random * Random());
 }
 

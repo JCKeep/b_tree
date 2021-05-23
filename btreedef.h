@@ -223,6 +223,9 @@ static inline void STRFREEBLOCKS(char * dst, char * src)
 	(__t)->offset = (node)->self; \
 	ListTailInsert(&(Tree)->free_blocks, &(__t)->link); \
 })
+	
+#define B_TREE_SYNC(tree) \
+	pwrite((tree)->fd, tree, sizeof(b_tree), 0)
 
 #endif /* _DISK_RDWR */
 

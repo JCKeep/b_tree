@@ -104,14 +104,14 @@ typedef struct LIST {
 
 
 
-static void ListInit(LIST *list) 
+STATIC VOID ListInit(LIST *list) 
 {
 	list->next = list;
 	list->prev = list;
 }
 
 
-static void ListDelete(LIST *node)
+STATIC VOID ListDelete(LIST *node)
 {
 	node->next->prev = node->prev;
 	node->prev->next = node->next;
@@ -120,7 +120,7 @@ static void ListDelete(LIST *node)
 }
 
 
-static void ListAdd(LIST *list, LIST *node)
+STATIC VOID ListAdd(LIST *list, LIST *node)
 {
     node->next = list->next;
     node->prev = list;
@@ -129,19 +129,19 @@ static void ListAdd(LIST *list, LIST *node)
 }
 
 
-static void ListTailInsert(LIST *list, LIST *node) 
+STATIC VOID ListTailInsert(LIST *list, LIST *node) 
 {
 	ListAdd(list->prev, node);
 }
 
 
-static void listHeadInsert(LIST *list, LIST *node)
+STATIC VOID listHeadInsert(LIST *list, LIST *node)
 {
 	ListAdd(list, node);
 }
 
 
-static BOOL ListEmpty(LIST *list)
+STATIC BOOL ListEmpty(LIST *list)
 {
 	return (BOOL)(list->next == list);
 }
